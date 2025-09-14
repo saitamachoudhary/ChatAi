@@ -1,0 +1,45 @@
+.orbital {
+   animation: 100s linear infinite rotateOrbital;
+}
+
+.botImg {
+   animation: 3s ease-in-out infinite alternate botAnimate;
+}
+
+.bg {
+   background-image: url("/bg.png");
+   opacity: 0.2;
+   height:100%;
+   width: 200%;
+   background-size: auto 100%;
+   animation: 8s ease-in-out infinite alternate slideBg;
+}
+
+@keyframes rotateOrbital {
+   0% {
+      transform: rotate(0deg);
+   }
+
+   100% {
+      transform: rotate(60deg);
+   }
+}
+
+@keyframes botAnimate {
+   0% {
+      transform: scale(1) rotate(0deg);
+   }
+
+   100% {
+      transform: scale(1.1) rotate(-5deg);
+   }
+}
+
+@keyframes slideBg {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
