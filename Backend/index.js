@@ -10,6 +10,7 @@ import chat from './models/chat.js';
 import userChats from './models/userChats.js';
 // import { clerkClient, requireAuth, getAuth } from '@clerk/express';
 import {sendEmail}  from './Email/email.js';
+import {langchain} from './Ai/LangChain.js';
 
 const imagekit = new ImageKit({
   urlEndpoint: process.env.VITE_IMAGE_KIT_ENDPOINT,
@@ -141,7 +142,8 @@ app.post('/api/chat', async (req, res) => {
     return;
   }
 
-  const Ai_response = await AI(message);
+  // const Ai_response = await AI(message);
+  const Ai_response = await langchain(message);
   // console.log(Ai_response);
   res.json({ message: Ai_response });
 })
